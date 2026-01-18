@@ -1,11 +1,17 @@
+import { Suspense } from "react";
+
+import { Skeleton } from "@/components/ui/skeleton";
 import { getEventList } from "@/data/get-events-data";
+
+import { EventsSummary } from "./event-summary";
 
 export default async function AsideEventsPage() {
   const eventData = await getEventList();
   return (
-    <section className="flex flex-col gap-4">
-      <h2>Events</h2>
-      <p>{eventData.length} events</p>
-    </section>
+    <>
+      <Suspense fallback={<Skeleton className="h-9 w-16 rounded-md" />}>
+        <EventsSummary eventData={eventData} />
+      </Suspense>
+    </>
   );
 }

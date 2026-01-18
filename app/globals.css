@@ -64,7 +64,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  
+
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -88,11 +88,10 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   --ui-primary: #f97709;
-  --ui-secondary-100: #FDD3F1;
-  --ui-secondary-200: #FEBFDF;
-  --ui-info-100: #0AABE3;
-  --ui-ternary-100: #ACEEC1;
-  
+  --ui-secondary-100: #fdd3f1;
+  --ui-secondary-200: #febfdf;
+  --ui-info-100: #0aabe3;
+  --ui-ternary-100: #aceec1;
 }
 
 .dark {

@@ -11,7 +11,7 @@ export function CardWrapper({
     <div
       data-testid="card-wrapper"
       className={twMerge(
-        "rounded-lg border border-b-neutral-900 bg-neutral-900/50 h-fit p-4",
+        "h-fit rounded-lg border border-b-neutral-900 bg-neutral-900/50 p-4",
         className
       )}
     >

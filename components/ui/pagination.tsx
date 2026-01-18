@@ -3,7 +3,6 @@ import {
   ChevronRightIcon,
   MoreHorizontalIcon,
 } from "lucide-react";
-import * as React from "react";
 
 import { buttonVariants, Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";

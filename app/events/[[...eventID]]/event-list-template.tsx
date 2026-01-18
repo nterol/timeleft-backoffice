@@ -14,16 +14,21 @@ export function EventListTemplate({ eventData }: { eventData: EventList }) {
         data-testid="events-list-container"
         className="flex flex-col gap-4"
       >
-        <Suspense
-          fallback={
-            <>
-              <Skeleton className="h-9 w-16 rounded-md" />
-              <Skeleton className="h-9 w-16 rounded-md" />
-            </>
-          }
+        <section
+          data-testid="event-filters"
+          className="flex items-baseline gap-3"
         >
-          <EventFilters data-testid="events-filters" data={eventData} />
-        </Suspense>
+          <Suspense
+            fallback={
+              <>
+                <Skeleton className="h-9 w-16 rounded-md" />
+                <Skeleton className="h-9 w-16 rounded-md" />
+              </>
+            }
+          >
+            <EventFilters data-testid="events-filters" data={eventData} />
+          </Suspense>
+        </section>
         <Suspense fallback={<Skeleton className="h-96 w-full rounded-md" />}>
           <EventContent eventData={eventData} />
         </Suspense>

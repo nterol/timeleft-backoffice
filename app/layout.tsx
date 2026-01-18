@@ -1,4 +1,3 @@
-
 import { Geist, Geist_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
@@ -33,12 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} h-screen overflow-hidden antialiased`}
       >
         <NuqsAdapter>
-          <div className="grid grid-rows-[auto_1fr_auto] h-full w-full">
+          <div className="grid h-full w-full grid-rows-[auto_1fr_auto]">
             <Header />
-            <main className="row-span-1 max-w-7xl mx-auto grid grid-cols-3 gap-8 h-full w-full py-16 px-4">
+            <main className="row-span-1 mx-auto grid h-full w-full max-w-7xl grid-cols-3 gap-8 px-4 py-16">
               {aside}
               {children}
             </main>
