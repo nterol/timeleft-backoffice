@@ -3,8 +3,6 @@ import { PillIcon } from "@/components/molecules/pill-icon";
 import { Event } from "@/data/event-schema";
 import Link from "next/link";
 
-
-
 export const columns = [
     {
         id: "id",
