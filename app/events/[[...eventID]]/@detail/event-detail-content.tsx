@@ -5,7 +5,7 @@ import { XIcon } from "lucide-react";
 import { PercentageText } from "@/components/atoms/percentage-text";
 import { StatusBadge } from "@/components/molecules/status-badge";
 import { Button } from "@/components/ui/button";
-import { Item, ItemDescription, ItemTitle } from "@/components/ui/item";
+import { ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item";
 import { getEventByID } from "@/data/get-events-data";
 
 interface EventDetailContentProps {
@@ -31,12 +31,12 @@ export function EventDetailContent({ event }: EventDetailContentProps) {
       </header>
       <main className="flex flex-col text-white">
         <div className="flex flex-col gap-2">
-          <Item>
-            <ItemTitle>Event Details</ItemTitle>
-            <ItemDescription>
+          <ItemContent className="text-white">
+            <ItemTitle className="text-lg font-bold">Event Details</ItemTitle>
+            <ItemDescription className="text-white">
               This event is <StatusBadge size="md" status={event.status} />
             </ItemDescription>
-            <p className="text-white">
+            <ItemDescription className="text-white">
               This event is a {event.type} event that{" "}
               {event.status === "live"
                 ? "is"
@@ -45,15 +45,19 @@ export function EventDetailContent({ event }: EventDetailContentProps) {
                   : "was"}{" "}
               held at {event.zone.name} - ({event.zone.city.name}) on{" "}
               {new Date(event.date).toLocaleDateString()}.
-            </p>
-            <p className="text-white">Capacity: {event.capacity}</p>
-            <p className="text-white">Booked: {event.booked}</p>
+            </ItemDescription>
+            <ItemDescription className="text-white">
+              Capacity: {event.capacity}
+            </ItemDescription>
+            <ItemDescription className="text-white">
+              Booked: {event.booked}
+            </ItemDescription>
 
-            <ItemDescription>
+            <ItemDescription className="text-white">
               The event is{" "}
               <PercentageText current={event.booked} total={event.capacity} />
             </ItemDescription>
-          </Item>
+          </ItemContent>
         </div>
       </main>
     </div>

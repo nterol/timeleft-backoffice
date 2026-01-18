@@ -20,7 +20,7 @@ export function PercentageText({
         WebkitBackgroundClip: "text",
       }}
     >
-      {percent}% booked
+      {percentClamped}% booked
     </span>
   );
 }
