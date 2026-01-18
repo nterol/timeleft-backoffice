@@ -24,11 +24,7 @@ export function useFilterEvents(data: EventList) {
 
 export function useSortFilteredEvents(data: EventList) {
     const filteredEvents = useFilterEvents(data);
-    const sortParams = useSortParams();
-
-    // Extraire sort et order pour éviter les problèmes de référence d'objet
-    const sort = sortParams[0].sort;
-    const order = sortParams[0].order;
+    const [{ sort, order }] = useSortParams();
 
     return useMemo(() => {
         if (sort === "") return filteredEvents;

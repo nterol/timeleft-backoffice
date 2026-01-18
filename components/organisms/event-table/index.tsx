@@ -27,7 +27,7 @@ export function EventTable({ data }: { data: EventList }) {
                     {paginatedEvents.map((event) => (
                         <TableRow key={event.id}>
                             {columns.map((column) => (
-                                <TableCell key={column.id}>
+                                <TableCell key={column.id} className="capitalize">
                                     {column.cell({ row: event })}
                                 </TableCell>
                             ))}

@@ -1,3 +1,5 @@
+import { Badge } from "@/components/atoms/badge";
+import { PillIcon } from "@/components/molecules/pill-icon";
 import { Event } from "@/data/event-schema";
 import Link from "next/link";
 
@@ -12,7 +14,7 @@ export const columns = [
                 className="hover:underline text-gray-500 capitalize"
                 href={`/events/${row.id}`}
             >
-                {row.id}
+                #{row.id}
             </Link>
         ),
     }, {
@@ -26,11 +28,11 @@ export const columns = [
     }, {
         id: "type",
         header: "Type",
-        cell: ({ row }: { row: Event }) => <>{row.type}</>,
+        cell: ({ row }: { row: Event }) => <span className="flex gap-2 items-center"><PillIcon type={row.type} />{row.type}</span>,
     }, {
         id: "status",
         header: "Status",
-        cell: ({ row }: { row: Event }) => <>{row.status}</>,
+        cell: ({ row }: { row: Event }) => <Badge variant={row.status === "live" ? "primary" : row.status === "upcoming" ? "secondary" : "ternary"}>{row.status}</Badge>,
     }, {
         id: "booked",
         header: "Booked",
