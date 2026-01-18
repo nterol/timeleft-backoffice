@@ -1,0 +1,10 @@
+echo "🔍 Checking types..."
+npm run type-check || exit 1
+
+echo "🔍 Checking lint..."
+npm run lint || exit 1
+
+echo "🔍 Checking build..."
+npm run build || exit 1
+
+echo "✅ All checks passed!"

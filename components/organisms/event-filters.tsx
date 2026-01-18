@@ -1,4 +1,5 @@
 import { EventList } from "@/data/event-schema";
+
 import { DropdownFilter } from "../molecules/dropdown-filter";
 
 export function EventFilters({ data }: { data: EventList }) {

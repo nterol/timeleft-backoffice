@@ -1,7 +1,8 @@
 "use client";
+import { parseAsInteger, useQueryState } from "nuqs";
+
 import { Button } from "@/components/ui/button";
 
-import { parseAsInteger, useQueryState } from "nuqs";
 
 import {
     DropdownMenu,

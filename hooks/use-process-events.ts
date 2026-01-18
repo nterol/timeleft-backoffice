@@ -1,8 +1,10 @@
 "use client";
 import { parseAsInteger, useQueryState } from "nuqs";
 import { useMemo } from "react";
-import { useSortParams } from "./use-search-params";
+
 import { EventStatus, EventList } from "@/data/event-schema";
+
+import { useSortParams } from "./use-search-params";
 
 // Calling these hooks but they merely are utils
 export function useFilterEvents(data: EventList) {
@@ -20,6 +22,8 @@ export function useFilterEvents(data: EventList) {
                 return event.type === type;
             });
     }, [data, city, type]);
+
+
 }
 
 export function useSortFilteredEvents(data: EventList) {

@@ -1,8 +1,10 @@
+import { ComponentType } from "react";
+
 import { DinnerIcon } from "@/assets/icons/dinner";
 import { DrinkIcon } from "@/assets/icons/drink";
 import { RunIcon } from "@/assets/icons/run";
 import { type EventType } from "@/data/event-schema";
-import { ComponentType } from "react";
+
 import { Pill } from "../atoms/pill";
 
 const iconMap = new Map<EventType, { icon: ComponentType<{ className?: string }>; variant: "primary" | "secondary" | "ternary" }>([

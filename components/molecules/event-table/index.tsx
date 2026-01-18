@@ -2,6 +2,7 @@
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { EventList } from "@/data/event-schema";
+
 import { columns } from "./columns";
 
 export function EventTable({ data }: { data: EventList }) {

@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 import { Logo } from "@/assets/icons/logo";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export function Footer() {
   return (

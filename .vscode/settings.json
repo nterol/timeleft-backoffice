@@ -1,21 +1,34 @@
 {
+  
     "tailwindCSS.classFunctions": ["cva", "cx"],
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "[svg]": {
       "editor.defaultFormatter": "jock.svg",
       "editor.formatOnSave": true
     },
     "prettier.enable": true,
     "prettier.requireConfig": true,
+    "prettier.useEditorConfig": true,
     "[typescriptreact]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    
   }
   

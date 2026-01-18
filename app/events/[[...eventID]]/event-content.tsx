@@ -1,9 +1,10 @@
 "use client";
+import { lazy, Suspense } from "react";
+
 import { EventTable } from "@/components/molecules/event-table";
 import { PaginationPlaceholder } from "@/components/molecules/placeholder";
 import { EventList } from "@/data/event-schema";
 import { usePaginateFilteredEvents } from "@/hooks/use-process-events";
-import { lazy, Suspense } from "react";
 
 const CustomPagination = lazy(() => import("@/components/molecules/custom-pagination").then(mod => ({ default: mod.CustomPagination })))
 

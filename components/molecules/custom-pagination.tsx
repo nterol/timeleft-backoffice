@@ -1,5 +1,6 @@
 "use client";
 import { parseAsInteger, useQueryState } from "nuqs";
+
 import { Button } from "../ui/button";
 import {
     Pagination,
