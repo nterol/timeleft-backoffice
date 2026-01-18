@@ -14,9 +14,9 @@ export function EventTable({ data }: { data: EventList }) {
 
 
     return (
-        <div className="rounded-md border overflow-x-auto">
+        <div data-testid="event-table" className="rounded-md border overflow-x-auto">
             <Table>
-                <TableHeader>
+                <TableHeader data-testid="event-table-header">
                     <TableRow>
                         {columns.map((column) => (
                             <TableHead key={column.id}>{column.header}</TableHead>

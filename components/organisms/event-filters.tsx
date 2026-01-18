@@ -6,7 +6,7 @@ export function EventFilters({ data }: { data: EventList }) {
     const type = [...new Set(data.map((event) => event.type))];
 
     return (
-        <section className="flex gap-3 items-baseline">
+        <section data-testid="event-filters" className="flex gap-3 items-baseline">
             <DropdownFilter label="City" name="city" values={cities} />
             <DropdownFilter label="Type" name="type" values={type} />
         </section>
