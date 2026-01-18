@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "./header";
 import { Footer } from "./footer";
-
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +32,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
       >
-        <div className="grid grid-rows-[auto_1fr_auto] h-full w-full">
-          <Header />
-          <main className="row-span-1 max-w-6xl mx-auto grid grid-cols-3 gap-2 h-full w-full py-16 px-4">
-            {aside}
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <NuqsAdapter>
+          <div className="grid grid-rows-[auto_1fr_auto] h-full w-full">
+            <Header />
+            <main className="row-span-1 max-w-7xl mx-auto grid grid-cols-3 gap-8 h-full w-full py-16 px-4">
+              {aside}
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </NuqsAdapter>
       </body>
     </html>
   );
