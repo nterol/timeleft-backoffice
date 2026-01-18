@@ -1,18 +1,10 @@
 "use client";
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { usePaginateFilteredEvents } from "@/hooks/use-process-events";
 import { EventList } from "@/data/event-schema";
 import { columns } from "./columns";
 
 export function EventTable({ data }: { data: EventList }) {
-    const { paginatedEvents } = usePaginateFilteredEvents(data);
-
-    console.log(paginatedEvents)
-
-
-
-
     return (
         <div data-testid="event-table" className="rounded-md border overflow-x-auto">
             <Table>
@@ -24,7 +16,7 @@ export function EventTable({ data }: { data: EventList }) {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {paginatedEvents.map((event) => (
+                    {data.map((event) => (
                         <TableRow key={event.id}>
                             {columns.map((column) => (
                                 <TableCell key={column.id} className="capitalize">
