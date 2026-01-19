@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Timeleft Back Office
+
+This project was bootstrapped with next.js
 
 ## Getting Started
 
-First, run the development server:
+You need `node@20+`to run this project.
+After cloning the project run
+
+```bash
+npm i
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is also running on the world-wide-web at this url: https://timeleft-backoffice.nterol.deno.net/ _(Deployed via Deno Deploy)_
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can also launch tests locally by using:
 
-## Learn More
+- `npm run test` for unit tests
+- `npm run test:e2e` for end to end tests
 
-To learn more about Next.js, take a look at the following resources:
+## Navigation and strategy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You should navigate to `/events` to really check on the application.
+The app will fetch the events JSON server-side from the given URL and set its result in cache. Filtering, sorting and pagination happen client-side via search-params update.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+I tried to use page `params` and `searchParams` so that everything would happen server side, but this led to a very poor UX where the whole page would reload on every filter/sorting picking.
 
-## Deploy on Vercel
+Clicking on the `ID` cells of the events table will open the `events/[eventID]` page. The modal only appear on Client Side as it is not possible to call the `showModal` method of the `<dialog>` HTML Element. But all the modals content is generated at build time via `generateStaticParams`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses [Next.js](https://nextjs.org/docs) for routing and SSR/SSG, with the App Router
+
+It uses [Tailwind](https://tailwindcss.com/) for styling, [Class Variant Authority (cva)](https://cva.style/docs) for combining variants in components and some [Shadcn](https://ui.shadcn.com/docs) components
+
+Search Params are handled with [nuqs](https://nuqs.dev/). No other state management library was needed for this exercice.
+
+Testing is handled with [Playwright](https://playwright.dev/) for end to end tests and [Jest](https://jestjs.io/) for unit tests _(because Vitest kept on crashing)_.
+
+We're also using Github actions to add unit and e2e tests to the CI.
+
+## Further development
+
+Further develoment would includes adding more e2e/unit tests.
+
+Also, on a real project, most of the events processing would actually happen on a remote server. But it is also possible to set up a custom server on Next that would handle these operations via query params, or directlly by using `server actions`.
